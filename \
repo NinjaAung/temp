@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="utf-8">    
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Is Your Password Secure?</title>
+	
+	<p align="center">
+          <style>
+            body {
+		font-family: times new roman;
+                font-size: 10em;
+                font-weight: 300;
+		color: #08ff08;
+		text-align: center;
+		background-image: url('http://mixxawards.be/img/1500557375_final_w_reverse.gif
+');	
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+	    }
+
+
+            input {
+                font-family: monospace;
+                font-size: .7em;
+                font-weight: 300;
+                color: black;
+                border: 3px solid #bbb;
+                border-radius: 5px;
+                padding: 0.25em 10px;
+                line-height:.75em;
+            }
+
+            label::after {
+                content: ":";
+            }
+
+            div {
+                margin-bottom: 10px;
+            }
+
+            .hsimp-time {
+                display: inline;
+		color: #FFF700;
+		font-family: Courier;
+                margin-right: 10px;	
+            }
+
+            .hsimp-checks li {
+                list-style: none;
+            }
+
+            .hsimp-checks h2 {
+                font-size: 0.6em;
+		color: #FFAA1D;
+                margin-bottom: 0;
+            }
+
+            .hsimp-checks p {
+                margin-top: 0;
+		color: #EAEDED;
+                font-size: 0.45em;
+            }
+        </style>
+
+        <link rel="stylesheet" href="hsimp.css">
+    </head>
+    <body>
+
+        <label>Password:</label>
+	<p align="center">
+        <input id="password-box" type="password" />
+        <div id="password-time" class="hsimp-time"></div>
+        <ul id="password-checks" class="hsimp-checks"></ul> 
+	<script src="hsimp.min.js"></script>
+		<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIREhEQDxEWFRUSFRcTExcQGBgYFxcWGBYYFhYWFRgYHCggGR0lGxgfLT0iJyouLjowGiEzODMtNykvLisBCgoKDg0OGhAQGy8mHyU1LzI3Ky0rLTcrNzcrKy8tLTYtLS0tNS01Ny4tLS0tLSstLS0tKy0rLi4vLS0uLTc3Mf/AABEIAIsBawMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABMEAABAwIDBQMEDgULBQEAAAABAAIDBBEFEiEGEzFBUQciYTJScZEUFiM1QlWBgpKhs8HR03JzdLGyCBUzNENUYpPCw+MXU5Si8Tb/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEBQH/xAAkEQEAAgICAgICAwEAAAAAAAAAAQIDESExBBITQYGxQlGhIv/aAAwDAQACEQMRAD8A7iiIgIiICIiAiIgIiICIiAiLHPUMjGaR7Wjq8gD1lBkRVnEdvsNh8qqY89ILyfWwED5SqpV9qctQ9tPhdIXSSHKwz2vf9Bpta2ty6wtcqyuG9vpVbNSv26dJIG2ubZjYeJ6Drw+pegVyynFTVzOo4al0kvkYhXN8mFuhfR0AtZruGZ4GmhOtg3peG0EdPFHBA3LHE0MY0XNmgWGp1PpKhMaWRO4bKIi8eiIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgL4TbUqp7T7eU9IXRx+7TDQtYe60/438j4C562XLce2lq60nfynJyjj7sY9LfhfOJWjH41789Qz5PJpTjuXVcZ7QKGmu3e754+DTjP63XDB6L3VKxXtaqHXFNTxxjrKS91uthlAPrVFLFhkatdfGpXvljt5WS3XCTxLbfEZr56uRoPKG0fyXjAP1qAnmc92aRxe7q8lx9Z1X2UL1htFJUSMigYXySGzGt5/gLa3Og1Vuq164U7tbudvtBRSTyMhgYXyPNmtbxJ+4DqdAFfsJwzd7yhoJO/5GI10fwOZpKMn4XnP5emwawnDN3vKGgk7/kYjXR/A5mkoz53nP5emwbN42GUOHzimywiGFwi1As6xDbE8XFx58SVjzZvfiOm7x/H9OZ7XDZHC46eIMhYGMaMjGjkBqT4knn1U8ue4Oyi9kUX80Mc1+Y+zCGyN9x3T7+zM/GTeZLZu/e/LMuhLJM7bBEReAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiLDWVTImOllcGsYMznHgAEH2qqWRMdJK4NYwXc5xsAPFco2t28lqc0NIXRQ8C7hJIP3sb4cettQo7a3aeSvksLsgYfc2df8b+rvDl6yYiKBdLB40Rzbtzc/kzb/mvTVZAgZfXly/FbtSzKxxHGxt6eA+teXxgCw4DQLX9sf00HtWtKFtzLFTUkk8jIYWF73mzWt5/gB14BeS9hpU9FJPIyGBhfJIcrWt436+AA1udNFamuZRh1DR7573XZiFbRxSS5LWLqSlLWnKer+XpsGyWFYbl3lFQSd7yMRro/g8zSUZ87zn8vTYNuGH0EcEbIYWBjGCzWt4AfefFc7Ll951HTp4MPpG57V3D8fpoI2Qw0dWxjBZrW0k2g+jqfFZMJw2Wtmjq61hY1rgaSmd/Z30E045ykcB8EeN1ZrLawqO8rfC59Q/FVS0LIiIqUhERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAXIe0PaU1Uppone4wu1I4SSDifFreA8bnort2h44aWlLYzaWe8bLcWi3fePQOfVwXG2M0DfOIb8nE/UCt3iYv5z+GHy8v8I/LZpIr69eHoUjHEvEDVnc6y6URpzbS1MT0jeegzerX7lrVDlnqnggg8CLetaVFDJO6OKJpfI+wDRzNtfQPFQtOpSiNwx09LJPI2GFhe95s1o5/gB1Vpw3D7GSioJO95GIV0fwetJRnzvOfy9Ng33h1AbyUNBJr5GIV0fwetJRnzvOfy9NgLjh2HxwRshgYGRsFmtbwA+8+K5+bL8nEdOlgwfHzbt4w/D44I2QwMDI2CzWt4AfefFbGVZcq+EKloaddUshjfLIbNYLmwJPgABqSToANblZ9nMSO+EVRTTU75WF0O/EdpA3V4Bje4BwFjldY2ueRtWtqa507v5upLOnJZJJIdWUrWva9kj+r7tGVnPidONuocKqpZoKiuliPscOdEynY5oMj2FjpHl7nHRjnANGneNydLQvKULEirm22PVNFHE+kon1bnvyOZHnu1uUnMcjHG1xbhzVLqO07E42ukkwKVjGAuc55ma1rRqS4mCwA6qtJ1dFyWi7U8RnYJIMEklYbgPidK9pINjZzYLaEK27EbT1la+ZtZh0lII2tLDJns8uLgQM8beFvHigtqIiAigtusUkpKCqqYCBJEzMwuFxfMBqOfFNhsUkq6ClqZyDJKzM8tFhfMRoOXBBOoiwV0+7jkktfIxz7cL5QTb6kGdFyLDu1jEKhm8p8FfKy+UuhfK8A2BsS2Ei9iNPFbEnanXw9+qwOeOMaufeUBo5kl0Ab6yEHVUUBsjtdS4nGZKVxuywkjkFpGE8MwuQQdbOBI0OtwbT6AiIgIiICIuUR7X4tilRUMwVsEdPA7JvajXObmxvY+Va4aG6C1zqAg6uiitmPZnsdn847v2QC4P3HkEZjlI+bZSqAiIgIiICIq9hO10NRW1WHsjkElKLvc8NyHVo7pDifhDiAgsKIiAiIgIi+ONhc8kHGe0jEt9XPYD3acCJvTN5Tz6zb5qr0Z7zR4Od6rD/UsM9UZZJJTxke6Q+l7i4/vXh8huMvEhwB6at1XZrHpSIcWbe95n+9pIVOuVvLyjyb4eLvD5TyB9STrRY4NGUcB/wDST1JK90sMk8jYYWl73mzWjn+AHVWb1G5V63OoZYIZJ5GxQtL3vNmtHP8AAeKmhSzNZLRYSBJILR19WH7sDzqWlkINjbyngG2nOwbtYdQkmShoJNR3MQrY+XWkpD53nP5emwFzw3D44I2QwMDI4xla1vAD7z48Vz82X5J1HTpYMHxxue1dw32fBGyGDDKdkcYyta2rNgP8nU+PFbQr8U+L4P8Ay/8AhVma1erKnS/arnEMU+L4P/L/AOFYampxWRpjZS08Bd3d6ZzLuwTq8R7oZiBwF7XsrW5YXJp61NlNn46cCKO513k0jzd8rzxfI7m4n6uCuC1qCmyN14nU/gtlVWncpwKvdofvXiP7LN9mVYVXu0P3rxH9lm+zKi9Q3Yp70U/6c/28itmN4vDRwyVNS/JHGLk8SSdA1o5knQBVPsU96Kf9Of7eRVntzrmGow2mqHFtMHGeoy3uW5msJGXW4ZnAt5yCRp9vMXrBvsMwjNB8F9RI1peOoBewfRLh4qW2S7QvZFQaCvpnUdWPJY83a/S/dJAsbAm2oIGhK1Iu2HBmNaxkzmtaA1obC8AACwAAGgsqJ2qbcYfWilqMPlPsqllDmlzHM7gBeNSBciRrLDxd1KPXVe1P3qrv1Y/janZb71UP6v8A1uWLtJmz4PVvHw4Wu9bmlUZvaA3DsHoaenIdVyQkgcRC0ud7o8cz0b8p0Gp4ue2O3nsWeGhooPZVXK4AxNdlDARcZ3AGxI1tyaC4kC17FXGQ0cpmDRIYH5xGSWh2Q3DSQCQOth6Aqp2S7PU8VO2vEvsioqwXyzm5IubuibfUWcO9fUuGvAAXHGv6vUfqpP4CgoPYB72yftL/ALKFdLXAuzHbaWgpHQx4dPUh0rpM8AcWgljBlOVjtRlvx5hWqbtMxGX3OjwOo3jtA6cS5GnkXDdtFvS5vpQaVLTNotqWxUoyx1MTjKxmjW5onyOAA4d+JrvnFdF2t2op8NgNRUuOpysY2xfI618rQfDiToFV+zvYyoinmxTFHB1XOCA0EHdg2vmLe7ms0ABugAtc30q23+NU4x6E4i4imomNOXKXAyObvB3R1cWX/VgIJ+LbHHZmienwVohOrRLIBIW8jZzmu/8AT1qf2H27ixEyQvidT1UX9JBLxsDYlpIBIBNiCAQTqNQTGf8AWbB/++//ACpPwVHxvbCinxrDK3DXkvdIyGpu1zMwc9sQNjbMTG9w+Y3oEHUO0bat2F0ralkIlJlbHlc4tFi17r3APm/WoXajtNFO9lLR0zqqqcxr3xx5iI8zQ6xyNLnOsRoBzFyOCw9vnvdHf+8s+zlU72abOso6KJxb7vUNbNUPdq9z3jNlLuYbe3rPEkoMdbtFiDKCmqY8OMtRNYTQAujMQLXEk5gToQBY9VzDsn2grqSlljocNNYx02Z0jZMmV26jbktlPIA/OXfZOB9BXK/5Ov8AUKn9p/2IUF9wPF5JKQVVdD7Ec0PdKyR1xG1hPec4gaZRf5VS/wDqNW1r3twTDTPHGcpmqHCNpPgHFoGmti7NYi7Qsnb1iL4sOZFGbeyJ2xu8WtY+S3yuY35LrXwDtQwOjp4aWGZ4bEwN0hk1PwnHTUudck9SUG3hXaRNFUMo8aojRvlsI5A7NE4k21OoAuR3g5wFxe3FdGXFO0rb7CMSonwRykzNc2SEvieLOBAcLkWF2Fw+VWun2ilGzorQ870UmUP57we4iT05tUHzaLtKyVBocLpXVtQ0kPyG0bCNHC4BzWOh4NBNs19FHVPaBi1GBLiWEZYb958Dwcg6khz2j5xaPFSnYtgscGHRzADeVV5JHcyA5zY2342DRw6uceavkjA4FrgCCCCDqCDoQRzCCBG0onoHV2HRmoJaTHHq1znB2VzDpoQb+pch2dx+vjxWvqIcNMtRK200GexiF2a5suvAcua7zSUzImNiiY1jGANY1gAa0DgABwC5hsP/APocY/R/1RILfsZjdbVb72dQGkyZN3d+bPmzZuQtaw9asqIgIiIC1cUdaGYjlG8/+pW0sc8eZrmn4QLfWLJA/NMTtB6F73mo9B+5aly3uu0LdCOhGhCz0FPJPKyGBhfJIbNa3679ABxJ0AC7Uy4dYbdFTyTyMhhaXvebNaOf4AdVb8NoNZKGhk18jEK6Pl1pKQ9fOfy9NgPGF4fbeUNDJr5GI10fLrSUZ6+c/l6bAXTDaGOCNkMLAxjBla1vAD7z4rDlzfJxHToYMEU5nt7w2gjgjZDAwMjYMrWt4AfefFbzAsbVoY9jjKRjSWmSWQ5IIY/Llf5regHN3ABVr2ptZXQsfRRVVRuIJ5nNlcJN0XBsbnNYZAQ5jC613AjkCQHL1gMse/qo6OYzUjGxGNxkdK1sx3m+jjlcSXNDRGbXNi4jwHnAcEc17quuLZKqVuU21jhjP9hCDwb1dxJU2LAAAWA4AaD1KOudvfrTUxXEBC1tmOkfI8RRRx2zPe65DQXEAaAkkmwDSVnwGpc6d8NTC6GWNgla0lr2vYTlzse3jlcLEEAgkciCa/ebEqhjaF4jio5d4+rLc43zWubuYW3Afo4hxvaxIGqtuEYPKyV9TVTiaZzBE3dx7qOOMOzEMYXON3G1yXHyW2tZQtb6SiEyiIoJCr3aH714j+yzfZlWFa+I0MdRFJBM3NHKx0b23Iu1wsRdpBGnRBTexT3op/05/t5FHdsuFTAUeK0zS5+HyZ5Gi/8AR5mvDjbXKHM1/wAL3HgCr5gmDwUcLaelZkjaXFrcznWLnFztXkniTzW+gr2ze2NFXRNkhmYHWBfHI5rZIzzDmk/WNDbQlauI7f0EVRBSMfv5ZpBGRSjebu/N+Xx5C5tc2sFrYt2WYVUPMj6XITqdy98bSeuRpyj5ApbZvY2hw+5pKdrHEWL3Evkt0zvJIHgNEGn2pe9Vd+rH8bVX+yLY+lbQipkjEslbG5shkAIETiWmJo5NIGvU+AAF/wAVw2Kqhkp6hueOQZXtu5txe/FpBHDkUwrDYqWGOnp25I4xlY27nWF78XEk8eZQcnw6Z+zeIGmmcTh1Y7NG92u6doLuPVugd1bldyIXVsZN6acjnDJw/QKx49gdPWxbiriEkeYOsS5pDhwLXNIIPHgeBI4FZKLCooYG0sbSIWs3TWuc9xDLWy5nEutbTjoEFB7APe2T9pf9lCulqL2e2fpqCIwUce7jLi8tzPf3iA0m73E8Gj1KUQFyjtFjkw3FKXG2ML4CBBUhvLQsufS1wtyzRgE94Lq6xzwte1zJGhzXAtc14Ba4HiCDoQgjMM2joqmMTQVMTmEXJzAFvg9psWHwIBUbR7d0U1aygpnGZ7mucZIBniaW20Lx/ENAbAm5UdWdkeESPz+xnNvraOSRrfkbms0eAsrLgGzlLQsLKOBsYNsxFy51uGd7iXO+UoKT/KA97GftDPs5V0HCv6GH9Wz+ELW2h2fpq+IQVke8jDg8NzPZ3gCAbscDwcfWpCKMNa1rRYNAAHgBYIPsnA+grlf8nX+oVP7T/sQrqpCitnNm6XD43RUUW7Y92dwzPfd2UNvd7ieDR6kEB2ubNvr8PeyFuaWFwmjaOLrBzXtHiWOdYdQF82B28pq2CNssrI6ljQyWOQhpLmiznsDvKaTrpwvYq7Kq7Q9nmG1zzLUUw3jtXPic6MuPV+QgOPiQSg+bUbfUFA33SUSyEgCGnLXyG5tci9mj0kX4C50UtjuHNrqOan1aKiEtBc0gtLm3aS06gg2NjroovZ7s9w2heJaemG8b5L5XOkc09WZyQ0+IAKtKDknZftcyia/B8UIp5ad7hG6Y2YQ5xdkLzoNXEgnQtLbK/Y3thQ0kZknqY+F2tY4Oe/wYxpuf3dSF72j2Uo68AVkDXlos14Ja9o42D2EOt4XsoPDeynCYHh4pc5GoE73vb8rHHK75QUFg2Vx1tfSxVbI3xiQGzZRY6G1weDmnk4cQubYBicVJtHiYqntiEzbMdKQ1pJEL2jMdNRe3iLcV15otoNAOFlAbS7GUOIFrquAOe0ZQ9jnMfl1OUuYQSNTobjUoJWixOCYvbBNHIY7ZxE9rsua5AdlOhNltqF2Z2WpMOY9lHFkEhBeS57y4jQXLyeF+AU0gIiICIqLt3tXI14w3DgX1c3dJZ/ZNIve/J1tfAam2l5UrNp1CN7RWNy5ftLhbpMUqaajG9L53ZAzznd97b8AGkkE8BlKk4qulpHPw6CsijeRlxCszhrrc6Wjv4jV/L02DZDCMLy56Ggfdx7mIV0fG/Okoz185/L02Au9Ls4II2Rx07WsY0BoaAbDx5k+K0ZMvtEVieP2ow4fWZtPc/wCIDD9o8LgjZDDV07GMGVrWyNsB69T4rbbtjh39+p/8xv4qUNK0cYwPS0D7l6bAzzG/RChyuQOK9oFBBE6RlTHM4aMjie0uc48Bfg0dXHQKPwDGaFj3VlZiFNJVyCxLZG5IWcRDDc6Dq7iSrpHQg8Igfmj8FtxYJfymMb80EryZFcO2mHf36n/zG/isEcr8WeYKOQto26VNTGdZOsFM7rbyn8uA1V6gwqFnCNpPUtF/3LbYwNFmgADkBYKE3exVhw+hjgjZDAwMjjAaxrRYABbCIoJCIiAi0mYtTmY0zaiIzAXMQkaZAOpZfMB8i3UBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERc62w24e+X+bsJG8qHnI6RliGHmGHhmHN3Bvp4TpSbTqEL3ikblvbabYPZIMPw0b2sk7vdsRDfmb6Zra66AanoalhOGOLpKKhkLpHktxKvaSXFxN3UtK463v5UnLidbAfMJwwgyUNBIS9xyYjXM4lxN3UtI487+U/lx42AuuJYWaHDy2kaY8hia807cz46cysE7ohYkvEZcb2JvrqVO1oiPWvX7RrWZn2t3+m3HFS4RSh7wGNjAZGyMXc5x0bFE3i97j8pNyea16TCsQqQZ6mtlpC83ZT0ohcImfBbI+SNxfJzJFhc2HC6jtnKOlmxBs1JLJVQQU7iHzTS1EcNQ97QNy+Vzu+5gdmsTls3hmN78qdrVY9rFT8b1n0aX8hPaxU/G9Z9Gl/IVnRBWPaxU/G9Z9Gl/IT2sVPxvWfRpfyFZ0QVj2sVPxvWfRpfyE9rFT8b1n0aX8hWdEFY9rFT8b1n0aX8hPaxU/G9Z9Gl/IVnRBWPaxU/G9Z9Gl/IX32sVPxvWfRpfyFZkQc/pMDqd1TUJo8rqepjndW5osrskokfK0A73eytu0gtA90dqRx6AiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIg+OAIsdQdDdRGKYJCYJ2RsEJkiczPTBscgBHwXAacFMImxD7OYJHSxMZGwMDW5WtbwaOniTzKmERezOwREXgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiD//Z"  width="360" height="138">
+	<script>
+		(function (doc) {
+                var passwordInput = doc.getElementById("password-box"),
+                    timeDiv = doc.getElementById("password-time"),
+                    checksList = doc.getElementById("password-checks");
+
+                // Code to render the time returned by HSIMP
+                var renderTime = function (time, input) {
+                    timeDiv.innerHTML = time || "";
+                };
+
+                // Code to output the checks returned by HSIMP
+                var renderChecks = function (checks, input) {
+                    checksList.innerHTML = "";
+
+                    for (var i = 0, l = checks.length; i < l; i++) {
+                        var li = doc.createElement("li"),
+                            title = doc.createElement("h2"),
+                            message = doc.createElement("p");
+
+                        title.innerHTML = checks[i].name;
+                        li.appendChild(title);
+
+                        message.innerHTML = checks[i].message;
+                        li.appendChild(message);
+
+                        checksList.appendChild(li);
+                    }
+                };
+
+                // Setup the HSIMP object
+                var attachTo = hsimp({
+                    options: {
+                        calculationsPerSecond: 10e9, // 10 billion calculations per second
+                        good: 31557600e9, // 1 billion years
+                        ok: 31557600e3 // 1 thousand years
+                    },
+                    outputTime: renderTime,
+                    outputChecks: renderChecks
+                });
+                
+                // setup custom values for "instantly"/"forever"
+                hsimp.setDictionary({
+                    "instantly": "Immediately",
+                    "forever": "Aaaaaaaaaaaaaaaages",
+                });
+
+                // Run the HSIMP
+                attachTo(passwordInput);
+            }(this.document));
+        </script>
+    </body>
+</html>
